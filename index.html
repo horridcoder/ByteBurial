@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Comparison of forgotten frameworks: Evil.js, TaffyDB, and HyLang" />
+  <meta name="keywords" content="Evil.js, TaffyDB, HyLang, React alternative, JavaScript, Python, Lisp, ByteBurial" />
+  <meta name="title"
+    content="I Tried 3 Forgotten Frameworks and Accidentally Built a Faster App Than React – Forget Code">
+  <meta name="description"
+    content="I tested Evil.js, TaffyDB, and HyLang to see if these forgotten tools can outperform React. The result? Faster builds and simpler code.">
+
+  <meta name="keywords"
+    content="Evil.js, TaffyDB, HyLang, React alternatives, forgotten JavaScript frameworks, faster than React, experimental web dev, React vs TaffyDB, Lisp Python hybrids">
+  <meta name="author" content="Ibrahim Ahmad">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://forgetcode.dev/blog1.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://forgetcode.dev/blog1.html">
+  <meta property="og:title" content="I Tried 3 Forgotten Frameworks and Accidentally Built a Faster App Than React">
+  <meta property="og:description"
+    content="I tested Evil.js, TaffyDB, and HyLang to see if these forgotten tools can outperform React. The result? Faster builds and simpler code.">
+  <meta property="og:image" content="https://forgetcode.dev/assets/forget-frameworks-og.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://forgetcode.dev/blog1.html">
+  <meta name="twitter:title" content="I Tried 3 Forgotten Frameworks and Accidentally Built a Faster App Than React">
+  <meta name="twitter:description"
+    content="I tested Evil.js, TaffyDB, and HyLang to see if these forgotten tools can outperform React. The result? Faster builds and simpler code.">
+  <meta name="twitter:image" content="https://forgetcode.dev/assets/forget-frameworks-og.jpg">
+
+  <title>ByteBurial</title>
+  <link rel="shortcut icon" href="ChatGPT Image May 5, 2025, 07_29_40 AM.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: #F2F3D9;
+    }
+
+    header {
+      background-color: #1e1e1e;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 40px;
+      border-radius: 50px;
+    }
+
+    .logo span {
+      font-size: 24px;
+      font-weight: bold;
+      color: #F2F3D9;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #F2F3D9;
+      font-weight: 600;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #F2F3D9;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #1e1e1e;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+    }
+
+    section h1 {
+      font-size: 38px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    section h2,
+    section h3 {
+      margin-top: 40px;
+      font-size: 24px;
+    }
+
+    section p {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin-top: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #1a1a1a;
+      color: #F2F3D9;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border: 1px solid #444;
+      text-align: left;
+    }
+
+    th {
+      background-color: #333;
+    }
+
+    footer {
+      background-color: #1e1e1e;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    footer h2 {
+      margin: 10px 0;
+      font-size: 20px;
+      color: #F2F3D9;
+    }
+
+    .social-icons {
+      margin: 20px 0;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+    }
+
+    .social-icons img {
+      width: 28px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <img src="ChatGPT Image May 5, 2025, 07_29_40 AM.png" alt="Forget Code Logo">
+        <span>ByteBurial</span>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav id="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section>
+    <h1>3 Forgotten Frameworks</h1>
+
+    <p>In the fast-paced world of web development, developers tend to follow popular trends. React, Vue, and Angular
+      dominate discussions, tutorials, and job boards. But while the community runs forward, some remarkable tools have
+      been forgotten—left behind not because they lacked value, but because they arrived before their time.</p>
+
+    <p>I decided to go back, dig through the ruins of GitHub, and test three obscure frameworks and libraries that are
+      almost never mentioned today: <strong>Evil.js</strong>, <strong>TaffyDB</strong>, and <strong>HyLang</strong>.</p>
+
+    <p>This is not a nostalgia trip. I used each tool to build something practical—and, surprisingly, in some scenarios,
+      these “dead” tools actually outperformed React in build time, load time, and code simplicity.</p>
+
+    <h2>1. Evil.js: The Most Dangerous JavaScript Library</h2>
+    <p><strong>What Is It?</strong> Evil.js is a JavaScript library designed to intentionally break or override standard
+      JavaScript behavior. It patches native functions like <code>Array.prototype.join()</code> or
+      <code>Math.random()</code> to behave unpredictably or maliciously. While it was initially created as a joke or for
+      educational experiments, its implications for security, debugging, and chaos engineering are worth a second look.
+    </p>
+    <p><strong>What I Built:</strong> I created a basic browser-based game that relies heavily on number generation,
+      array manipulation, and string formatting. Then, I injected Evil.js into the codebase. The result? A completely
+      broken application—and a fascinating study in how fragile modern JavaScript development can be.</p>
+    <p><strong>Key Insight:</strong> While it is not practical for production, Evil.js is a tool worth exploring if
+      you're serious about learning JavaScript internals, or if you want to test the resilience of your codebase.</p>
+
+    <h2>2. TaffyDB: An In-Browser Database Without Dependencies</h2>
+    <p><strong>What Is It?</strong> TaffyDB is a lightweight JavaScript library that provides in-memory database
+      functionality. It mimics SQL-like querying, sorting, and filtering within the browser and requires no external
+      database or network connection.</p>
+    <p><strong>What I Built:</strong> I used TaffyDB to build a small note-taking application that works entirely
+      offline. The app supports adding, searching, and deleting notes, with data persisting across sessions using
+      <code>localStorage</code>.</p>
+    <p><strong>Why It Matters:</strong> For small apps, internal tools, or low-bandwidth environments, TaffyDB still
+      shines. It delivers blazing-fast queries and local storage without any modern bloat.</p>
+
+    <h2>3. HyLang: Python Meets Lisp</h2>
+    <p><strong>What Is It?</strong> HyLang is a Lisp dialect that compiles directly to Python bytecode. It offers the
+      expressive power of Lisp with the full ecosystem and runtime of Python.</p>
+    <p><strong>What I Built:</strong> Using HyLang, I wrote a basic command-line utility that parses JSON, performs
+      regex-based transformations, and outputs formatted results. Despite being a completely different language, it
+      allowed me to use Python’s standard modules with no wrappers or hacks.</p>
+    <p><strong>Use Case:</strong> HyLang is ideal for developers who love functional programming but want access to
+      Python’s mature ecosystem. It’s especially useful for experimental AI, DSL creation, or tooling.</p>
+
+    <h2>Performance Comparison</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>React</th>
+            <th>TaffyDB</th>
+            <th>Evil.js</th>
+            <th>HyLang</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Load Time</td>
+            <td>~250ms</td>
+            <td>~40ms</td>
+            <td>N/A</td>
+            <td>CLI-only</td>
+          </tr>
+          <tr>
+            <td>Bundle Size</td>
+            <td>100KB+</td>
+            <td>20–30KB</td>
+            <td>&lt;10KB</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Learning Curve</td>
+            <td>Moderate</td>
+            <td>Low</td>
+            <td>None</td>
+            <td>High</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <h2>ByteBurial</h2>
+    <h2>– Where we test tech that time forgot.</h2>
+    <h2><span style="color: gray;">Email Us: </span><span>contact@forgetcode.dev</span></h2>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+      </a>
+      <a href="https://linkedin.com" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn">
+      </a>
+    </div>
+    <h2>&copy; 2025 – Forget Code by Ibrahim Ahmad</h2>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navbar = document.getElementById("navbar");
+
+    hamburger.onclick = () => {
+      navbar.classList.toggle("active");
+    };
+  </script>
+</body>
+
+</html>
