@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ByteBurial – blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: #F2F3D9;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #1e1e1e;
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 40px;
+      border-radius: 50px;
+    }
+
+    .logo span {
+      font-size: 24px;
+      font-weight: bold;
+      color: #F2F3D9;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #F2F3D9;
+      font-weight: 600;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #F2F3D9;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #1e1e1e;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 180px;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .coming-soon {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .coming-wrapper {
+      max-width: 600px;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .coming-wrapper h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .coming-wrapper p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #aaa;
+    }
+
+    .notify-btn {
+      background-color: #F2F3D9;
+      color: #121212;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .notify-btn:hover {
+      background-color: #e6e6e6;
+    }
+
+    footer {
+      background-color: #1e1e1e;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    footer h2 {
+      margin: 10px 0;
+      font-size: 20px;
+      color: #F2F3D9;
+    }
+
+    .social-icons {
+      margin: 20px 0;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+    }
+
+    .social-icons img {
+      width: 28px;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <img src="ChatGPT Image May 5, 2025, 07_29_40 AM.png" alt="Logo" />
+        <span>ByteBurial</span>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav id="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="coming-soon">
+    <div class="coming-wrapper">
+      <h1>Coming Soon...</h1>
+      <p>We're cooking up something amazing. Stay tuned!</p>
+      <a href="mailto:contact@forgetcode.dev" class="notify-btn">Notify Me</a>
+    </div>
+  </section>
+
+  <footer>
+    <h2>ByteBurial</h2>
+    <h2>– Where we test tech that time forgot.</h2>
+    <h2><span style="color: gray;">Email Us: </span><span>contact@forgetcode.dev</span></h2>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" />
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" />
+      </a>
+    </div>
+    <h2>&copy; 2025 – Forget Code by Ibrahim Ahmad</h2>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navbar = document.getElementById("navbar");
+    hamburger.onclick = () => {
+      navbar.classList.toggle("active");
+    };
+  </script>
+</body>
+
+</html>
